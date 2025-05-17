@@ -34,13 +34,13 @@ print(f"Currency with max rate: {currency}, Rate: {rate}")
 
 res = cur.execute("SELECT currency, AVG(rate) FROM exchange_rates LIMIT 1")
 currency, rate = res.fetchone()
-print(f"Average currency is: {rate}")
+print(f"Average rate of all currencies: {rate}")
 
-print("Top 5 maximum rate")
+print("Top 5 maximum rate:")
 for row in cur.execute("SELECT DISTINCT currency, rate FROM exchange_rates ORDER BY rate DESC LIMIT 5"):
     print(row)
 
-print("Top 5 Minimum rate")
+print("Top 5 Minimum rate:")
 for row in cur.execute("SELECT DISTINCT currency, rate FROM exchange_rates ORDER BY rate ASC LIMIT 5"):
     print(row)
 
